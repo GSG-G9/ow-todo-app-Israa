@@ -1,7 +1,7 @@
 {
-  "eslint.workingDirectories": ["components","pages"],
   "[javascript]": {
     "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
       "source.fixAll": true
     }
   },
@@ -9,13 +9,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "editor.formatOnSave": false,
-  "files.eol": "\n",
-  "cSpell.words": [
-  ],
-  "cSpell.ignoreWords": []
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true
 }
