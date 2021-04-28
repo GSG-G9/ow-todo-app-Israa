@@ -9,19 +9,18 @@ const TodoItem = ({ text, done, id }) => {
   };
 
   const handleClick = () => {
-    console.log(  dispatch(deleteTodo(id)));
+    console.log(dispatch(deleteTodo(id)));
     dispatch(deleteTodo(id));
   };
   return (
-    <div className="todoItem">
+    <li className="todoItem">
       <input type="checkbox" checked={done} onChange={handleCheck} />
-      <span>
-        <p className={done && 'todoItem--done'}>{text}</p>
-        <button type="button" onClick={handleClick}>
-          delete
-        </button>
-      </span>
-    </div>
+
+      <span className={done ? 'todoItem--done' : null}>{text}</span>
+      <button type="button" onClick={handleClick}>
+        delete
+      </button>
+    </li>
   );
 };
 

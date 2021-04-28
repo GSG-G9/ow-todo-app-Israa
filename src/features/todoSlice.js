@@ -23,7 +23,13 @@ const todoSlice = createSlice({
       });
     },
     deleteTodo: (state, action) => {
-      state.todoList.filter((item) => action.payload !== item.id);
+      const { todoList } = state;
+      const deleted = todoList.filter((item) => item.id !== action.payload);
+
+      return {
+        ...state,
+        todoList: deleted,
+      };
     },
   },
 });
