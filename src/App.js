@@ -10,11 +10,11 @@ function App() {
   const todoList = useSelector(selectTodoList);
   return (
     <div className="app__container">
-      <div className="app__todoContainer">
+      <ul className="app__todoContainer">
         {todoList.map((item) => (
-          <TodoItem text={item.text} done={item.done} id={item.id} />
+          <TodoItem text={item.text} done={item.done} id={item.id} key={item.id} />
         ))}
-      </div>
+      </ul>
       <AddTodo />
     </div>
   );
