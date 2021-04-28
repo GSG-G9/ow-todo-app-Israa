@@ -1,8 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import TodoItem from '../TodoItem';
+
 import { VisibilityFilter } from '../../features/filtersSlice';
 import FilterButton from '../FilterButton';
+import { deleteTodo } from '../../features/todoSlice';
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -18,9 +20,18 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 const TodoList = () => {
+  const dispatch = useDispatch();
   const todos = useSelector((state) =>
     getVisibleTodos(state.todos.todoList, state.visibilityFilter)
   );
+  const itemsLeft = todos.reduce((p, c) => (c.done ? p : p + 1), 0);
+  const onClear = () => {
+    todos.map((todo) => {
+      if (todo.done === true) {
+        dispatch(deleteTodo(todo.id));
+      }
+    });
+  };
   return (
     <ul>
       {todos.map((item) => (
@@ -33,6 +44,10 @@ const TodoList = () => {
       ))}
       <div>
         <span>Show: </span>
+        <span>
+          {' '}
+          <strong>{itemsLeft}</strong> item left
+        </span>
         <FilterButton visibilityFilter={VisibilityFilter.ShowAll} text="All" />
         <FilterButton
           visibilityFilter={VisibilityFilter.ShowActive}
@@ -42,6 +57,7 @@ const TodoList = () => {
           visibilityFilter={VisibilityFilter.ShowCompleted}
           text="Completed"
         />
+        <button onClick={onClear}>Clear Completed</button>
       </div>
     </ul>
   );
