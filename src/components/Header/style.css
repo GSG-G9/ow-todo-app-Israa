@@ -1,0 +1,40 @@
+  .header__container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .theme-toggle{
+    height: 100px;
+    background-image: url(../../assets/images/icon-moon.svg);
+  }
+  .todo-text{
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    color:white;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  label::before {
+    background-image: url(../../assets/images/icon-moon.svg);
+  }
+  .theme-label{
+    background-image: url(../../assets/images/icon-moon.svg);
+    background-size: contain;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  input[type=checkbox].theme-toggle{
+     display: none;
+    }
+  :checked + .theme-label{
+    background-image: url(../../assets/images/icon-sun.svg);
+    background-size: contain;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+  }
+  

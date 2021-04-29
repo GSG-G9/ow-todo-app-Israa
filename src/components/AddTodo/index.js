@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { saveTodo } from '../../features/todoSlice';
-import Checkbox from '../Checkbox';
+import './style.css';
 
 const AddTodo = () => {
   const [todoText, setTodoText] = useState('');
@@ -9,7 +10,6 @@ const AddTodo = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(todoText);
     dispatch(
       saveTodo({
         text: todoText,
@@ -20,12 +20,16 @@ const AddTodo = () => {
     setTodoText('');
   };
   return (
-    <form className="input" onSubmit={handleSubmit}>
+    <form className="addTodo__container" onSubmit={handleSubmit}>
       <span>
-        <input type="checkbox" onChange={(e) => setCheck(e.target.checked)} />
-
+        <label className="check__container">
+          <input type="checkbox" onChange={(e) => setCheck(e.target.checked)} />
+          <span className="check_shape" />
+        </label>
         <input
           type="text"
+          placeholder="Create a new todo..."
+          className="addTodo__input"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
         />

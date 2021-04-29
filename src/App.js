@@ -1,29 +1,32 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import classnames from 'classnames';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
-import { changeTheme } from './features/themeSlice';
-
+import Header from './components/Header';
+import darkImage from './assets/images/bg-desktop-dark.jpg';
+import lightImage from './assets/images/bg-desktop-light.jpg';
 import './App.css';
 
 function App() {
-  const dispatch = useDispatch();
-  const currentTheme = useSelector((state) => state.theme.darkMode);
-
-  const handleToggle = () => {
-    dispatch(changeTheme(!currentTheme));
-  };
-
+  const darkTheme = useSelector((state) => state.theme.darkMode);
+  const className = darkTheme ? 'darkMode' : 'lightMode';
   return (
-    <div className="app__container">
-      <div className="app__Header">
-        <span>
-          TODO
-          <button onClick={handleToggle}>toggle</button>
-        </span>
-        <AddTodo />
+    <div className={classnames(className, 'app__container')}>
+      <div className="app__image__container__div">
+        <div className="app__image__container">
+          <img
+            src={darkTheme ? darkImage : lightImage}
+            alt="background"
+            className="app__image"
+          />
+        </div>
       </div>
-      <TodoList />
+      <div className="app__todo__container__div">
+        <Header />
+        <AddTodo />
+        <TodoList />
+      </div>
     </div>
   );
 }
