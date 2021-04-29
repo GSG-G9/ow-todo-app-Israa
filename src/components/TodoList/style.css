@@ -25,3 +25,17 @@
 .clear-completed{
   cursor: pointer;
 }
+@media screen and (max-width: 375px)  {
+  .filters{
+    justify-content: space-around;
+    position: absolute;
+    top:120%;
+    left:0;
+    width: 100%;
+    padding: 1rem 3rem;
+    background-color:var(--background-color-todo-item);
+    box-shadow: 0px 0px 20px var(--shadow-color);
+    color:var(--todo-item-text);
+    border-radius:0.25rem;
+  }
+}

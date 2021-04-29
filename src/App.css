@@ -27,3 +27,8 @@
   flex-direction: column;
   width: 40vw;
 }
+@media screen and (max-width: 375px)  {
+  .app__todo__container__div{
+  width: 85vw;
+}
+}
