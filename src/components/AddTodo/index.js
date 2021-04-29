@@ -17,13 +17,18 @@ const AddTodo = () => {
         id: Date.now(),
       })
     );
+    setTodoText('');
   };
   return (
     <form className="input" onSubmit={handleSubmit}>
       <span>
         <input type="checkbox" onChange={(e) => setCheck(e.target.checked)} />
 
-        <input type="text" onChange={(e) => setTodoText(e.target.value)} />
+        <input
+          type="text"
+          value={todoText}
+          onChange={(e) => setTodoText(e.target.value)}
+        />
       </span>
     </form>
   );
