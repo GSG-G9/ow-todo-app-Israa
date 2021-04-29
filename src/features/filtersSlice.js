@@ -19,5 +19,6 @@ const visibilityFilterSlice = createSlice({
 });
 
 export const { setVisibilityFilter } = visibilityFilterSlice.actions;
-export const selectVisibilityFilter = (state) => state.visibilityFilter.VisibilityFilter;
+export const selectVisibilityFilter = (state) =>
+  state.visibilityFilter.VisibilityFilter;
 export default visibilityFilterSlice.reducer;
