@@ -1,0 +1,12 @@
+  .filter-item{
+    cursor: pointer;
+    color:gray;
+    font-size: 0.75rem;
+  }
+  .filter-item:hover{
+    color:var(--bright-blue)
+  }
+  .selected{
+    color:var(--bright-blue)
+  }
+  

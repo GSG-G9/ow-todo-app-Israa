@@ -1,0 +1,31 @@
+.todoItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    border:1px solid rgba(0, 0, 0, 0.159);
+    padding:1rem;
+    background-color: transparent;
+    color:inherit
+  }
+  .todoContent{
+    color:inherit;
+    text-align: left;
+    margin-left: 1rem;
+    cursor: pointer;
+    flex-grow:10 ;
+  }
+  .todoItem--done{
+    text-decoration: line-through;
+    color:gray;
+  }
+  .todoItem__deleteButton{
+    visibility: hidden;
+    flex-grow:1 ;
+    width: fit-content;
+    color:gray;
+  }
+  .todoItem:hover .todoItem__deleteButton{
+    visibility: visible;
+    cursor: pointer;
+  }
+  

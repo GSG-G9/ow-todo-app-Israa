@@ -1,22 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
-html,
-body {
-	padding: 0;
-	margin: 0;
-	font-family: 'Josefin Sans', sans-serif;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-size: 18px;
-
+	font-family: 'Josefin Sans', sans-serif;
 
 	--bright-blue: #3f7efd;
 	--very-dark-blue: #161722;
@@ -24,7 +13,6 @@ a {
 	--light-grayish-blue: #cacde8;
 	--light-grayish-blue-hover: #e4e5f1;
 	--dark-grayish-blue: #777a92;
-
 	--very-dark-grayish-blue: #393a4c;
 	--very-light-gray: #fafafa;
 	--very-light-grayish-blue: #e4e5f1;
@@ -33,17 +21,20 @@ a {
 
 }
 .darkMode {
-  --shadow-color:black;
---todo-item-text:var(--very-light-grayish-blue);
-  --background-color:var(--very-dark-desaturated-blue);
---background-color-todo-item: var(--very-dark-grayish-blue);
---todo-content-color: white;
+	--shadow-color:black;
+	--todo-item-text:var(--very-light-grayish-blue);
+	--background-color:var(--very-dark-desaturated-blue);
+	--background-color-todo-item: var(--very-dark-grayish-blue);
+	--todo-content-color: white;
 }
-
 .lightMode {
-  --shadow-color:#393a4c;
---todo-item-text:var(--very-dark-grayish-blue);
---background-color-todo-item: white;
---background-color:white;
---todo-content-color: black;
+	--shadow-color:#393a4c;
+	--todo-item-text:var(--very-dark-grayish-blue);
+	--background-color-todo-item: white;
+	--background-color:white;
+	--todo-content-color: black;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
