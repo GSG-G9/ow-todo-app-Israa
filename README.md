@@ -17,7 +17,7 @@ This Website helps you to manage your tasks by writing your todo tasks filter an
 - Clear all completed todos
 - Toggle light and dark mode
 
-### **guide installation**  📥
+### **Installation guide **  📥
 
 1. Clone this repo.
 2. Navigate to the cloned repo.
